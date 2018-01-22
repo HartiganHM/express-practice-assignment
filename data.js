@@ -1,4 +1,4 @@
-export default {
+module.exports = {
   human1: {
     name: 'Hugh',
     breed: 'Developer'
