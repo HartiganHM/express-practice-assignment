@@ -2,7 +2,7 @@ const express = require('express');
 const app = express();
 const path = require('path');
 
-const urlLogger (request, response, next) => {
+const urlLogger = (request, response, next) => {
   console.log('Request URL:', request.url);
   next();
 };
