@@ -17,7 +17,7 @@ app
   .use(timeLogger, urlLogger)
   .use(express.static(path.join(__dirname, 'public')))
   .get('/json', (request, response) => {
-    response.status(200).json(data);
+    response.status(200).json(dataObject);
   })
   .use((request, response, next) => {
     response.status(404).send('There ain\'t no body home!')
