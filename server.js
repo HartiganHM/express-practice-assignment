@@ -1,6 +1,7 @@
 const express = require('express');
 const app = express();
 const path = require('path');
+const dataObject = require('./data');
 
 const urlLogger = (request, response, next) => {
   console.log('Request URL:', request.url);
@@ -16,7 +17,7 @@ app
   .use(timeLogger, urlLogger)
   .use(express.static(path.join(__dirname, 'public')))
   .get('/json', (request, response) => {
-    response.status(200).json({ name: 'Hugh' });
+    response.status(200).json(data);
   })
   .use((request, response, next) => {
     response.status(404).send('There ain\'t no body home!')
