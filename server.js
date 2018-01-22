@@ -7,9 +7,13 @@ const urlLogger = (request, response, next) => {
   next();
 };
 
+const timeLogger = (request, response, next) => {
+  console.log('Datetime:', new Date(Date.now()).toString());
+};
+
 app
   .use(express.static(path.join(__dirname, 'public')))
-  .get('/json', urlLogger, (request, response) => {
+  .get('/json', urlLogger, timeLogger, (request, response) => {
     response.status(200).json({ name: 'Hugh' });
   })
   .listen(3001, () => {
