@@ -8,7 +8,8 @@ const urlLogger = (request, response, next) => {
 };
 
 const timeLogger = (request, response, next) => {
-  console.log('Datetime:', new Date(Date.now()).toString());
+  console.log('Datetime:', new Date(Date.now()).toString());;
+  next()
 };
 
 app
