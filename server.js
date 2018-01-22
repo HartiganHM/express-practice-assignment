@@ -17,6 +17,8 @@ app
   .use(express.static(path.join(__dirname, 'public')))
   .get('/json', (request, response) => {
     response.status(200).json({ name: 'Hugh' });
+  })
+  .use((request, response, next) => {
     response.status(404).send('There ain\'t no body home!')
   })
   .listen(3001, () => {
