@@ -1,5 +1,5 @@
-document.getElementById('button').addEventListener('click', alert)
-
-const alert = () => {
-  alert('I DONE BEEN CLICKED!')
+const logClick = () => {
+  console.log('I DONE BEEN CLICKED!')
 }
+
+document.getElementById('button').addEventListener('click', logClick)
